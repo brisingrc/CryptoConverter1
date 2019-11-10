@@ -8,11 +8,18 @@
 
 import UIKit
 
+protocol array {
+    func dataTransfer(array:Quote)
+}
+
 enum QuotesSelected {
     case from
     case to
 }
 class SelectTableViewController: UITableViewController {
+    
+    var btnSetImageDelegate: ButtonImageDelegate?
+    
     var quoteCurrency: QuotesSelected = .from
     var quoteProvider: QuoteProvider?
     var fromOne: [Quote] = []
@@ -20,7 +27,7 @@ class SelectTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
        quoteProvider = QuoteProvider()
               NotificationCenter.default.addObserver(self, selector: #selector(generateTableContent), name: .init("tableDataSource"), object: nil)
               generateTableContent()
@@ -63,13 +70,18 @@ class SelectTableViewController: UITableViewController {
      }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 //           let selectedCurrency: Currency = Model.shared.currencies[indexPath.row]
+        print("didSelectMethod was called")
         let selectedQuote: Quote = fromOne[indexPath.row]
-        if quoteCurrency == .from {
+        
+        print(quoteCurrency)
+                if quoteCurrency == .from {
+                    btnSetImageDelegate?.setBtnImage(image: selectedQuote.image)
+                    btnSetImageDelegate?.baseQuote = selectedQuote
             
-            fromOne[indexPath.row] = selectedQuote
         }
         if quoteCurrency == .to {
-                  fromOne[indexPath.row] = selectedQuote
+                  btnSetImageDelegate?.setSecondImage(image: selectedQuote.image)
+            btnSetImageDelegate?.quote = selectedQuote
               }
 
            dismiss(animated: true, completion: nil)

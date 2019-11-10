@@ -17,13 +17,15 @@ class Converter {
         self.baseQuote = baseQuote
     }
     
-    func convertQuote(amount: Double, convertQuote: Quote)-> String{
+    static func convertQuote(amount: Double, convertQuote: Quote, baseQuote: Quote)-> String{
         let result = amount * convertQuote.price_usd / baseQuote.price_usd
         let string = String(format: "%.2f", result)
-        
-        
         return string
     }
-   
+   static func convertBackQuote(amount: Double, convertQuote: Quote, baseQuote: Quote)-> String{
+       let result = amount * convertQuote.price_usd / baseQuote.price_usd
+       let string = String(format: "%.2f", result)
+       return string
+   }
     
 }

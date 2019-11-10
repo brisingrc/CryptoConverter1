@@ -50,26 +50,7 @@ struct Quote: CustomStringConvertible {
         return string
     }
     
-//    func bitQuote()-> Quote {
-//        let bt: Quote
-//        bt.id = "bitcoin"
-//        bt.name = "Bitcoin"
-//        bt.symbol = "BTC"
-//        bt.rank = "1"
-//        bt.price_usd = 10201.0994019
-//        bt.price_btc =  1.0
-//        bt.h_volume_usd = 15754522367.5
-//         bt.market_cap_usd = 182598781597
-//        bt.available_supply = 17899912.0
-//        bt.total_supply = 18026187.0
-//        bt.max_supply = Int(21000000.0)
-//        bt.percent_change_1h = -0.12
-//        bt.percent_change_24h = -1.33
-//        bt.percent_change_7d = 1.65
-//        bt.last_updated = NSDate(timeIntervalSince1970: 1566924809)
-//        bt.image = UIImage(named: "btc.png")!
-//        return bt
-//    }
+
 }
 
 

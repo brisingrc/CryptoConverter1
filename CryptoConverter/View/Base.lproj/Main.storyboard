@@ -23,7 +23,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="94"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="btc" translatesAutoresizingMaskIntoConstraints="NO" id="kvM-Q5-zSS">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kvM-Q5-zSS">
                                             <rect key="frame" x="16" y="11" width="66" height="72"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="66" id="xDO-hf-MxS"/>
@@ -148,9 +148,9 @@
                                     <constraint firstAttribute="height" constant="34" id="yOg-Uj-8kf"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                 <connections>
-                                    <action selector="textActionOne:" destination="lNW-Cm-lah" eventType="editingDidEnd" id="mdd-dv-A5r"/>
+                                    <action selector="textActionOne:" destination="lNW-Cm-lah" eventType="editingDidEnd" id="p0c-Ut-exv"/>
                                 </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8ze-3X-FZl">
@@ -160,10 +160,7 @@
                                     <constraint firstAttribute="height" constant="34" id="dgZ-Ea-C4V"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <action selector="textActionTwo:" destination="lNW-Cm-lah" eventType="editingDidEnd" id="RRw-L3-u23"/>
-                                </connections>
+                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l4R-cK-5H1">
                                 <rect key="frame" x="16" y="145" width="100" height="79"/>
@@ -172,20 +169,22 @@
                                     <constraint firstAttribute="height" constant="79" id="aX7-XS-maF"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <state key="normal" title="  Button">
+                                <state key="normal" title="  Button" image="btc">
                                     <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="pushOne:" destination="lNW-Cm-lah" eventType="touchUpInside" id="bDX-ts-qv4"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tb4-Fm-duK">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tb4-Fm-duK">
                                 <rect key="frame" x="259" y="145" width="100" height="79"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="79" id="ecJ-6z-sZa"/>
                                     <constraint firstAttribute="width" constant="100" id="i0K-pt-3hq"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="Button" image="btc">
+                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="pushTwo:" destination="lNW-Cm-lah" eventType="touchUpInside" id="yoj-zN-znS"/>
                                 </connections>
@@ -206,6 +205,8 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Convert" image="tab2" selectedImage="tab2" id="7F5-nX-J63"/>
                     <connections>
+                        <outlet property="buttonOne" destination="l4R-cK-5H1" id="LKg-a0-zIB"/>
+                        <outlet property="buttonTwo" destination="tb4-Fm-duK" id="kgB-ct-Rqr"/>
                         <outlet property="text1" destination="mbE-6I-RXa" id="SCw-hb-dsj"/>
                         <outlet property="text2" destination="8ze-3X-FZl" id="7a7-lF-88B"/>
                     </connections>
